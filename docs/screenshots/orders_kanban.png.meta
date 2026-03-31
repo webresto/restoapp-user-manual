@@ -1,0 +1,3 @@
+URL: https://restoapp.com/admin/order-kanban
+Path: Sidebar -> Orders -> Current Orders
+Description: Order management in Kanban (Grid) mode. Shows orders sorted by status: Design, Order, Preparing, On the way, Delivered, Rejected.

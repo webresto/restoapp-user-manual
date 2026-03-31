@@ -1,0 +1,22 @@
+restoapp-docs exited with code 1
+restoapp-docs  |
+restoapp-docs  |  │  ⚠  Warning from the Material for MkDocs team
+restoapp-docs  |  │
+restoapp-docs  |  │  MkDocs 2.0, the underlying framework of Material for MkDocs,
+restoapp-docs  |  │  will introduce backward-incompatible changes, including:
+restoapp-docs  |  │
+restoapp-docs  |  │  × All plugins will stop working – the plugin system has been removed
+restoapp-docs  |  │  × All theme overrides will break – the theming system has been rewritten
+restoapp-docs  |  │  × No migration path exists – existing projects cannot be upgraded
+restoapp-docs  |  │  × Closed contribution model – community members can't report bugs
+restoapp-docs  |  │  × Currently unlicensed – unsuitable for production use
+restoapp-docs  |  │
+restoapp-docs  |  │  Our full analysis:
+restoapp-docs  |  │
+restoapp-docs  |  │  https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/
+restoapp-docs  |
+restoapp-docs  | ERROR   -  Config value 'plugins': Plugin 'i18n' option 'languages': Expected a list of items, but a <class 'dict'> was given.
+restoapp-docs  |
+restoapp-docs  | Aborted with a configuration error!
+restoapp-docs exited with code 1
+Gracefully stopping... (press Ctrl+C again to force)

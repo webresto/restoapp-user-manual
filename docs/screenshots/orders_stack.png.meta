@@ -1,0 +1,3 @@
+URL: https://restoapp.com/admin/order-kanban
+Path: Sidebar -> Orders -> Current Orders -> Click "Вид списком" button in top right.
+Description: Order management in "Stack" (Стопка) mode. This is a list view showing ID, Status, Client, Amount, Creation time, and Comments.

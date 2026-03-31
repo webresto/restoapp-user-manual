@@ -1,0 +1,3 @@
+URL: https://restoapp.com/admin/stock-manager#out-of-stock
+Path: Sidebar -> Stock Manager -> Click "Нет в наличии" tab.
+Description: Shows all items that are currently out of stock. If all products are available, a celebratory message is shown.

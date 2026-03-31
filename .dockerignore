@@ -1,0 +1,10 @@
+# Exclude technical and internal files from the Docker build context
+.git/
+roadmap/
+sync
+error.txt
+README.md
+README-old.md
+Dockerfile
+docker-compose.yml
+.dockerignore

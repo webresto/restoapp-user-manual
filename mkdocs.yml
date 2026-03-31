@@ -1,0 +1,62 @@
+site_name: RestoApp Documentation
+site_description: Документация системы администрирования RestoApp
+site_author: RestoApp Team
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
+  language: ru
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - navigation.footer
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/restoapp
+    - icon: fontawesome/solid/globe
+      link: https://restoapp.com
+
+plugins:
+  - search
+  - i18n:
+      default_language: ru
+      languages:
+        - locale: ru
+          name: Русский
+          default: true
+        - locale: en
+          name: English
+
+nav:
+  - 'Главная': index.md
+  - 'Разделы системы':
+      - 'Каталог блюд': catalog.md
+      - 'Менеджер склада': stock-manager.md
+      - 'Управление заказами': orders.md
+      - 'Пользователи и группы': users-and-groups.md
+
