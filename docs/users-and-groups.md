@@ -1,42 +1,42 @@
-# 👥 Управление пользователями и группами (Права доступа)
+# 👥 Users and Groups Management (Access Permissions)
 
-Этот раздел посвящен управлению административными учетными записями и настройке прав доступа через группы. Все эти настройки находятся во вкладке **Платформа (Platform)**.
+This section covers administrative accounts and configuring access permissions via groups. All these settings are located in the **Platform** tab.
 
-## 👤 Управление пользователями
-Для управления учетными записями перейдите в раздел **Platform -> User**. Здесь отображается список всех пользователей, имеющих доступ к панели управления.
+## 👤 User Management
+To manage accounts, navigate to **Platform -> User**. Here, you'll see a list of all users who have access to the management panel.
 
-![Список пользователей](screenshots/platform_users.png)
-*Рисунок 1: Общий вид списка пользователей в разделе Платформа.*
+![User list](screenshots/platform_users.png)
+*Figure 1: General view of the user list in the Platform section.*
 
-**Действия с пользователями:**
-С помощью меню действий для каждой учетной записи можно:
-*   **Просматривать (View)** профиль пользователя.
-*   **Редактировать (Edit)** данные (имя, почта, пароль).
-*   **Удалять (Delete)** учетные записи.
+**User Actions:**
+Using the action menu for each account, you can:
+*   **View** user profile.
+*   **Edit** data (name, email, password).
+*   **Delete** accounts.
 
-![Меню действий пользователя](screenshots/user_actions.png)
-*Рисунок 2: Выпадающее меню действий для конкретного пользователя.*
+![User action menu](screenshots/user_actions.png)
+*Figure 2: Drop-down action menu for a specific user.*
 
-## 🛡️ Группы и права доступа
-Вместо настройки прав для каждого пользователя отдельно, система использует **Группы (Groups)**. Вы создаете группу с определенным набором прав, а затем просто добавляете в нее нужных пользователей.
+## 🛡️ Groups and Access Rights
+Instead of configuring permissions for each user individually, the system uses **Groups**. You create a group with a specific set of rights and then simply add the necessary users to it.
 
-Раздел находится в **Platform -> Group**.
+The section is located in **Platform -> Group**.
 
-![Список групп](screenshots/platform_groups.png)
-*Рисунок 3: Список существующих групп в системе.*
+![Group list](screenshots/platform_groups.png)
+*Figure 3: List of existing groups in the system.*
 
-### Настройка матрицы прав
-Для каждой группы можно настроить детальную матрицу разрешений для каждой модели данных (блюда, заказы, клиенты и т.д.).
+### Configuring the Permission Matrix
+For each group, you can configure a detailed permission matrix for every data model (dishes, orders, customers, etc.).
 
-![Матрица разрешений](screenshots/group_permissions.png)
-*Рисунок 4: Подробная настройка прав (Создание, Чтение, Обновление, Удаление).*
+![Permission matrix](screenshots/group_permissions.png)
+*Figure 4: Detailed configuration of rights (Create, Read, Update, Delete).*
 
-**Уровни доступа:**
-Для каждой сущности в системе (Dish, Order, Category и др.) можно задать:
-1.  **Create (Создание)**: возможность добавлять новые объекты.
-2.  **Read (Чтение)**: доступ к просмотру данных.
-3.  **Update (Обновление)**: право на редактирование существующих данных.
-4.  **Delete (Удаление)**: возможность удалять объекты из базы.
+**Access Levels:**
+For each entity in the system (Dish, Order, Category, etc.), you can specify:
+1.  **Create**: Ability to add new objects.
+2.  **Read**: Access to view data.
+3.  **Update**: Rights to edit existing data.
+4.  **Delete**: Ability to remove objects from the database.
 
 > [!IMPORTANT]
-> Назначение пользователя в несколько групп суммирует их права. Будьте осторожны при предоставлении прав на удаление (Delete).
+> Assigning a user to multiple groups sums their permissions. Use caution when granting Delete permissions.

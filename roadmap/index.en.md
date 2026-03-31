@@ -1,4 +1,4 @@
-# Documentation Overview and Roadmap
+# User Manual Overview and Roadmap
 
 This file defines the plan for documenting the `restoapp.com` admin panel.
 

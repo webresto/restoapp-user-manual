@@ -1,12 +1,12 @@
-site_name: RestoApp Documentation
-site_description: Документация системы администрирования RestoApp
+site_name: RestoApp User Manual
+site_description: RestoApp administration system user manual
 site_author: RestoApp Team
 
 theme:
   name: material
   logo: assets/logo.png
   favicon: assets/logo.png
-  language: ru
+  language: en
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -44,19 +44,31 @@ extra:
 plugins:
   - search
   - i18n:
-      default_language: ru
+      default_language: en
+      re_build: true
       languages:
-        - locale: ru
-          name: Русский
-          default: true
         - locale: en
           name: English
+          default: true
+          build: true
+        - locale: ru
+          name: Русский
+          build: true
+          site_name: RestoApp Руководство пользователя
+          site_description: Руководство пользователя системы администрирования RestoApp
+          nav:
+            - 'Главная': index.md
+            - 'Разделы системы':
+                - 'Каталог блюд': catalog.md
+                - 'Менеджер склада': stock-manager.md
+                - 'Управление заказами': orders.md
+                - 'Пользователи и группы': users-and-groups.md
 
 nav:
-  - 'Главная': index.md
-  - 'Разделы системы':
-      - 'Каталог блюд': catalog.md
-      - 'Менеджер склада': stock-manager.md
-      - 'Управление заказами': orders.md
-      - 'Пользователи и группы': users-and-groups.md
+  - 'Home': index.md
+  - 'System Sections':
+      - 'Product Catalog': catalog.md
+      - 'Stock Manager': stock-manager.md
+      - 'Order Management': orders.md
+      - 'Users and Groups': users-and-groups.md
 

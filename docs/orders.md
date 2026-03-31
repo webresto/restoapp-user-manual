@@ -1,36 +1,36 @@
-# 📋 Управление заказами
+# 📋 Order Management
 
-Административная панель предлагает два режима управления текущими заказами: Канбан (Kanban) и Стопка (Stack). 
+The administration panel offers two modes for managing current orders: Kanban and Stack.
 
 > [!IMPORTANT]
-> Режим **Канбан** планируется к удалению в будущих обновлениях. Документация сосредоточена на режиме **Стопка**, который останется основным видом.
+> The **Kanban** mode is planned to be removed in future updates. The User Manual focus is on the **Stack** mode, which will remain the primary view.
 
-## 📚 Режим "Стопка"
-Режим "Стопка" обеспечивает компактный табличный вид всех текущих заказов, оптимизированный для работы с большими объемами.
+## 📚 "Stack" Mode
+The "Stack" mode provides a compact table view of all current orders, optimized for high volumes.
 
-![Просмотр заказов в режиме Стопка](screenshots/orders_stack.png)
-*Рисунок 1: Заказы в режиме "Стопка" (список).*
+![Order lookup in Stack mode](screenshots/orders_stack.png)
+*Figure 1: Orders in "Stack" mode (list).*
 
-**Ключевые информационные столбцы:**
-*   **ID ЗАКАЗА**: Уникальный ID заказа и короткий хеш.
-*   **СТАТУС**: Текущий статус (например, "Новый").
-*   **КЛИЕНТ**: Имя и номер телефона.
-*   **СУММА**: Общая сумма заказа и количество позиций.
-*   **СОЗДАН**: Дата и время создания.
-*   **КОММЕНТАРИЙ**: Дополнительные примечания от клиента.
+**Key information columns:**
+*   **ORDER ID**: Unique order ID and short hash.
+*   **STATUS**: Current status (e.g., "New").
+*   **CUSTOMER**: Name and phone number.
+*   **TOTAL**: Total order amount and item count.
+*   **CREATED**: Creation date and time.
+*   **COMMENT**: Additional notes from the customer.
 
-## 🚀 Поток заказов
-Хотя вид Канбан (показан ниже для контекста) визуализирует стандартный поток, логика на сервере остается одинаковой для обоих видов:
+## 🚀 Order Flow
+While the Kanban view (shown below for context) visualizes the standard flow, the server-side logic remains identical for both views:
 
-![Просмотр заказов в режиме Канбан](screenshots/orders_kanban.png)
-*Рисунок 2: Поток заказов, визуализированный в режиме Канбан.*
+![Order lookup in Kanban mode](screenshots/orders_kanban.png)
+*Figure 2: Order flow visualized in Kanban mode.*
 
-**Стандартный поток:**
-1.  **Новый**: Заказ создан, но еще не подтвержден.
-2.  **Заказ**: Заказ подтвержден, ожидает подготовки.
-3.  **Готовится**: Кухня готовит еду.
-4.  **В пути**: Курьер забрал заказ.
-5.  **Доставлен**: Клиент получил заказ.
-6.  **Отклонен**: Отмененные заказы.
+**Standard flow:**
+1.  **New**: Order created but not yet confirmed.
+2.  **Order**: Order confirmed, awaiting preparation.
+3.  **Cooking**: Kitchen is preparing the food.
+4.  **On the way**: Courier has picked up the order.
+5.  **Delivered**: Customer has received the order.
+6.  **Rejected**: Cancelled orders.
 
-В режиме "Стопка" эти статусы отражены в колонке **STATUS** и могут быть отфильтрованы с помощью карточек статусов в верхней части интерфейса.
+In "Stack" mode, these statuses are reflected in the **STATUS** column and can be filtered using status cards at the top of the interface.

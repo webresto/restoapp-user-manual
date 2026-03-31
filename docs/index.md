@@ -1,15 +1,15 @@
-# 📖 Руководство пользователя RestoApp
+# 📖 RestoApp User Manual
 
-Добро пожаловать в официальное руководство по административной панели RestoApp. Здесь собраны инструкции по управлению вашим рестораном, меню и процессом обслуживания заказов.
+Welcome to the RestoApp official administrator panel guide. This documentation is designed to help you manage your restaurant's menu, inventory, and order fulfillment process.
 
-## Основные разделы
-- [🥗 Каталог блюд](catalog.md) — управление категориями, блюдами и их иерархией.
-- [📦 Менеджер склада](stock-manager.md) — контроль стоп-листов (наличия) и маркетинговой видимости товаров.
-- [📝 Управление заказами](orders.md) — работа со списком заказов в режиме «Стопка».
-- [👥 Пользователи и группы](users-and-groups.md) — настройка прав доступа и управление администраторами.
+## Main Sections
+- [🥗 Product Catalog](catalog.md) — manage categories, dishes, and their hierarchical structure.
+- [📦 Stock Manager](stock-manager.md) — control stop-lists (availability) and marketing visibility.
+- [📝 Order Management](orders.md) — work with the order list in "Stack" mode.
+- [👥 Users and Groups](users-and-groups.md) — configure access permissions and administrative roles.
 
-## Как пользоваться этой документацией
-Используйте боковую панель навигации для быстрого перехода между разделами. Каждая страница содержит скриншоты интерфейса с пояснениями ключевых функций.
+## How to Use This User Manual
+Use the side navigation panel to quickly switch between sections. Each page contains interface screenshots with detailed explanations of key functions.
 
 ---
-*Служба поддержки RestoApp*
+*RestoApp Support Team*
