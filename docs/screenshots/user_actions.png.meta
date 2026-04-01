@@ -1,3 +1,8 @@
 URL: https://restoapp.com/admin/system/user
 Path: Sidebar -> System -> Users -> Click "Actions" icon on a user row.
 Description: Dropdown menu showing Edit, View, and Delete options for managing administrative users in the System section.
+
+Annotation:
+- Red circle around the "Edit" menu item
+- Red circle around the "View" menu item
+- Red circle around the "Delete" menu item

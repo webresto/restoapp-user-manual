@@ -1,0 +1,8 @@
+URL: https://restoapp.com/admin/stock-manager#overview
+Path: Sidebar -> Stock Manager -> Click "Обзор" tab -> Click on a group (e.g. "Блюда").
+Description: Row of actions for a single product within a group. Controls visibility, marketing availability (Hide/Show), and manual balance settings.
+
+Annotation:
+- Red text "Disable/Enable" with an arrow pointing to the "Выкл" button
+- Red text "Hide/Show" with an arrow pointing to the "Показать" eye icon
+- Red text "Set Balance" with an arrow pointing to the price input / numeric value "80"

@@ -1,3 +1,8 @@
 URL: https://restoapp.com/admin/catalog/products
 Path: Sidebar -> Catalog -> Products -> Select "origin" from the terminal dropdown.
 Description: Hierarchical tree view of the product catalog. Shows root folders like restoapp.com, Add-ons, Sides, Sauces, etc.
+
+Annotation:
+- Red circle on Category Tree Sidebar area
+- Red circle on the terminal selector dropdown (e.g. "origin")
+- Red circles on root folders (e.g. "restoapp.com", "Add-ons") in the tree

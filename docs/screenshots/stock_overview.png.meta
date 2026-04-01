@@ -1,3 +1,9 @@
 URL: https://restoapp.com/admin/stock-manager#overview
 Path: Sidebar -> Stock Manager -> Click "Обзор" tab.
 Description: Interface for managing availability of dishes. Allow searching for dishes or browsing by category. Shows "Unlimited" or numeric stock status.
+
+Annotation:
+- Red arrow from middle-left area towards the first group card labeled "gfcafe.ru"
+- Large red circle encircling the group label "Соус подлив доставка" on the fourth card
+- Small red circle highlighting the eye icon (visibility toggle) on the "Соус подлив доставка" card
+- Red text "Навигация и скрытие групп" below the fourth group card

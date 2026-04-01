@@ -1,3 +1,7 @@
 URL: https://restoapp.com/admin/system/group/edit/...
 Path: Sidebar -> System -> Groups -> Click "Edit" on a group.
 Description: Detailed permission matrix for a user group. Shows Create, Read, Update, Delete checkboxes for various system models like UserAP, GroupAP, user, dish, group, order, bonusprogram, etc.
+
+Annotation:
+- Red circle on Create, Read, Update, and Delete column headers
+- Red circles on specific checkboxes for the "Dish" and "Order" models
