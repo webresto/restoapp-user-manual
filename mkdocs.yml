@@ -39,7 +39,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/restoapp
     - icon: fontawesome/solid/globe
-      link: https://restoapp.com
+      link: https://restoapp.org
 
 plugins:
   - search

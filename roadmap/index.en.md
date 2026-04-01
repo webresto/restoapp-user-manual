@@ -1,6 +1,6 @@
 # User Manual Overview and Roadmap
 
-This file defines the plan for documenting the `restoapp.com` admin panel.
+This file defines the plan for documenting the `restoapp.org` admin panel.
 
 ## Goal of the project
 Create a comprehensive, visually supported guide for the administrator interface for use by procurement people, managers, and AI agents.
