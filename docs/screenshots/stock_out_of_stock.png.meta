@@ -1,8 +1,8 @@
-URL: https://restoapp.com/admin/stock-manager#out-of-stock
-Path: Sidebar -> Stock Manager -> Click "Нет в наличии" tab.
-Description: Shows all items that are currently out of stock. If all products are available, a celebratory message is shown.
+URL: https://gfcafe.preview.resto.cloud/admin/stock-manager#out-of-stock
+Path: Sidebar -> Catalog -> Stock Manager -> "Нет в наличии" tab
+Description: Shows all items that are currently out of stock. A celebratory message is shown if everything is in stock.
 
 Annotation:
-- Red oval around the "Нет в наличии" tab
-- Red hollow arrow pointing to the tab
-- Red text "Стоп-лист из iiko"
+- Red oval around the "Нет в наличии" tab.
+- Red arrow highlighting the tab name.
+- Red text "Стоп-лист" below the tab.

@@ -1,8 +1,9 @@
-URL: https://restoapp.com/admin/stock-manager#overview
-Path: Sidebar -> Stock Manager -> Click "Обзор" tab -> Click on a group (e.g. "Блюда").
-Description: Row of actions for a single product within a group. Controls visibility, marketing availability (Hide/Show), and manual balance settings.
+URL: https://gfcafe.preview.resto.cloud/admin/stock-manager#overview
+Path: Sidebar -> Catalog -> Stock Manager -> "Обзор" tab -> Select a category (e.g., "Добавки")
+Description: Controls for individual products. Includes status toggle, visibility toggle, and stock adjustment buttons (+/-, unlimited).
 
 Annotation:
-- Red text "Disable/Enable" with an arrow pointing to the "Выкл" button
-- Red text "Hide/Show" with an arrow pointing to the "Показать" eye icon
-- Red text "Set Balance" with an arrow pointing to the price input / numeric value "80"
+- Red arrow pointing to the "Работает (адм. статус)" checkbox.
+- Red circle around the visibility eye icon (top right of the card).
+- Red box around the stock adjustment buttons (- / + / ∞).
+- Red text "Управление остатками" at the bottom of the card.
