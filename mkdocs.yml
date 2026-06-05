@@ -63,6 +63,10 @@ plugins:
                 - 'Менеджер склада': stock-manager.md
                 - 'Управление заказами': orders.md
                 - 'Пользователи и группы': users-and-groups.md
+                - 'Менеджер уведомлений': notifications-manager.md
+                - 'Менеджер настроек': settings-manager.md
+                - 'Отчёт по заказам': orders-report.md
+                - 'Настройки FCM': fcm-settings.md
 
 nav:
   - 'Home': index.md
@@ -71,4 +75,14 @@ nav:
       - 'Stock Manager': stock-manager.md
       - 'Order Management': orders.md
       - 'Users and Groups': users-and-groups.md
+      - 'Notifications Manager': notifications-manager.md
+      - 'Settings Manager': settings-manager.md
+      - 'Orders Report': orders-report.md
+      - 'FCM Settings': fcm-settings.md
 
+extra_css:
+  - assets/annotations.css
+
+extra_javascript:
+  - assets/js-yaml.min.js
+  - assets/annotations.js

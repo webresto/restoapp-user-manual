@@ -1,0 +1,10 @@
+URL: http://localhost:42880/admin/notifications-manager#history/{id}
+Path: Sidebar -> Notifications -> Notifications -> click row
+Description: Детальная панель уведомления. Показывает заголовок, тело, статус, группу, стоимость доставки, попытки, ID и кнопку повторной отправки.
+
+Annotation:
+- Правая панель Notification details с полями Status, Group, Badge, Spent cost, Delivery attempts
+- Кнопка Retry delivery
+
+Masking:
+- UUID в поле ID заменены на xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx через DOM

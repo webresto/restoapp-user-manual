@@ -1,0 +1,52 @@
+input: screen.png
+output: screen.annotated.png
+description: "Example application screen used to demonstrate annotation rendering."
+annotation_goal: "Show the main highlighted UI areas and one masked private-data region."
+crop:
+  x: 0
+  y: 0
+  width: 1024
+  height: 640
+annotations:
+  - type: rect
+    description: "Highlight the new orders block."
+    target: "new orders block"
+    success_criteria: "The rectangle surrounds the block without covering nearby controls."
+    x: 120
+    y: 80
+    width: 300
+    height: 90
+    label: "Новый блок заказов"
+  - type: arrow
+    description: "Point to the settings button."
+    target: "settings button"
+    success_criteria: "The arrow tip lands on the settings control and the label is readable."
+    from: [500, 220]
+    to: [650, 120]
+    label: "Кнопка настройки"
+  - type: marker
+    description: "Mark the first workflow point."
+    target: "first workflow point"
+    success_criteria: "The marker is centered on the intended point."
+    x: 400
+    y: 300
+    text: "1"
+  - type: blur
+    description: "Mask a private data area."
+    target: "private data area"
+    success_criteria: "The sensitive text is not readable."
+    x: 760
+    y: 120
+    width: 180
+    height: 42
+    radius: 14
+  - type: spotlight
+    description: "Emphasize the main content area."
+    target: "main content area"
+    success_criteria: "The spotlight includes the content area and leaves context visible."
+    x: 70
+    y: 170
+    width: 360
+    height: 170
+    label: "Основная область"
+    opacity: 0.42

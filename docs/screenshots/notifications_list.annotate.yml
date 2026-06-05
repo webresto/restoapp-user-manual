@@ -1,0 +1,33 @@
+input: notifications_list.png
+description: "Раздел Notifications Manager — вкладка Activity. Список истории уведомлений с фильтрами."
+annotation_goal: "Показать основные элементы управления: табы секций, фильтры и список записей."
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    description: "Табы для переключения между разделами Notifications Manager"
+    target: "tab bar: Dashboard, Types, Events, Channels, Activity"
+    success_criteria: "Прямоугольник охватывает все табы, не перекрывая заголовок"
+    x: 896
+    y: 120
+    width: 440
+    height: 44
+    label: "Разделы менеджера"
+  - type: rect
+    description: "Блок фильтров для поиска и фильтрации уведомлений"
+    target: "filter row: search box, status dropdown, group dropdown, date picker"
+    success_criteria: "Прямоугольник охватывает строку фильтров"
+    x: 296
+    y: 348
+    width: 980
+    height: 150
+    label: "Фильтры"
+  - type: oval
+    description: "Кнопка Refresh для перезагрузки списка"
+    target: "Refresh button top-right of the history card"
+    success_criteria: "Овал окружает кнопку Refresh"
+    x: 1238
+    y: 284
+    width: 88
+    height: 32
+    label: "Обновить"

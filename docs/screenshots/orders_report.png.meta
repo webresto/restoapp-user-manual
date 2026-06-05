@@ -1,0 +1,11 @@
+URL: http://localhost:42880/admin/orders-report
+Path: Sidebar -> Reports -> Orders Report
+Description: Отчёт по заказам за выбранный период. Показывает сводную таблицу по платформам с количеством и выручкой, разбивкой по статусам (Ordered, Cooking, On the way, Done, Rejected).
+
+Annotation:
+- Навигация по месяцам: стрелки и поля From/To с кнопкой Apply
+- Таблица с колонками Platform, Total, Revenue и статусами
+- Итоговая строка Total внизу
+
+Masking:
+- Нет персональных данных

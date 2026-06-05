@@ -1,0 +1,11 @@
+URL: http://localhost:42880/admin/notifications-manager
+Path: Sidebar -> Notifications -> Notifications
+Description: Список истории уведомлений. Показывает отправленные уведомления с фильтрами по статусу, группе и дате. Справа — панель деталей.
+
+Annotation:
+- Табы Dashboard / Types / Events / Channels / Activity вверху страницы
+- Фильтры: поиск по тексту, статус, группа, дата
+- Строки списка: пользователь, статус (sent/failed), группа (user/manager), время
+
+Masking:
+- UUID в колонке ID заменены на xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx через DOM

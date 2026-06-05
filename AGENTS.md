@@ -16,7 +16,7 @@ For each screenshot:
 
 ```
 <name>.png
-<name>_annotated.png
+<name>.annotate.yml
 <name>.meta
 ```
 
@@ -41,8 +41,30 @@ Navigate through the interface to reach the required screen before taking the sc
 The agent must:
 
 1. Generate `.meta` file
-2. Generate annotated screenshot if annotations exist
-3. Ensure correct naming with `_annotated`
+2. Generate annotation seed if annotations exist
+3. Ensure clean screenshots stay unmodified in the repository
+4. Calibrate annotations in the browser until they visually align with the intended UI elements
+
+Detailed annotator CLI workflow: `annotator/AGENT_USAGE.md`.
+
+---
+
+## MCP Tool CLI
+
+When the RestoApp MCP endpoint is available, use the local CLI instead of
+hand-written `curl` commands:
+
+```bash
+bin/resto-mcp-tool.js --url http://localhost:1337/mcp list
+bin/resto-mcp-tool.js --url http://localhost:1337/mcp describe <tool>
+bin/resto-mcp-tool.js --url http://localhost:1337/mcp schema <tool>
+bin/resto-mcp-tool.js --url http://localhost:1337/mcp call <tool> '{"param":"value"}'
+```
+
+The CLI reads `RESTO_MCP_URL` or `MCP_URL` for the endpoint and
+`MCP_ADMIN_KEY` for protected methods. Use `describe` or `schema` before
+calling unfamiliar tools so the request matches the method description and
+JSON schema.
 
 ---
 
@@ -79,20 +101,23 @@ Masking:
 * If present:
 
   * Add `Annotation` block in `.meta`
-  * Generate `<name>_annotated.png`
+  * Generate `<name>.annotate.yml`
 
 ---
 
-### 3. Annotated Screenshot
+### 3. Browser Annotation Rendering
 
 If annotations exist:
 
-* Create a copy of the original screenshot
-* Add visual marks (arrows, circles, text)
-* Save as:
+* Keep the original screenshot unchanged
+* Store visual marks (arrows, circles, text) in a separate annotation seed file
+* Render annotations in the browser on top of the clean screenshot
+* Open the rendered result in a browser and visually verify alignment
+* Adjust coordinates, sizes, and labels until the overlay is clean, accurate, and not visibly shifted
+* Save the seed as:
 
 ```
-<name>_annotated.png
+<name>.annotate.yml
 ```
 
 ---
@@ -106,10 +131,32 @@ If annotations exist:
   * Arrow
   * Text labels
 * Match descriptions from `.meta`
+* Do not accept the first render by default; calibration is required whenever an annotation looks offset, noisy, or covers important content
 
 ---
 
-### 5. Anonymization (Personal Data Protection)
+### 5. Annotation Calibration (REQUIRED when annotations exist)
+
+If a screenshot has annotations:
+
+* The screenshot/annotation creation mechanism must create the initial `<name>.annotate.yml`
+* The initial seed must include factual description fields for the whole image and each annotation
+* Run the annotator calibration CLI when local agent calibration is needed:
+
+```
+cd annotator
+npm run calibrate -- ../docs/screenshots/<name>.annotate.yml --port 4177 --max-iterations 5
+```
+
+* The agent must preview the result in a browser
+* The agent must compare each mark against the intended UI target
+* The agent must iterate until the annotation is visually aligned and readable
+* If labels or shapes overlap important text or controls, they must be repositioned
+* A seed file is not considered complete until this visual calibration pass is finished
+
+---
+
+### 6. Anonymization (Personal Data Protection)
 
 ALWAYS blur or obscure personal data (names, logins, emails, phone numbers, UUIDs) in screenshots. 
 **CRITICAL**: Do this directly in the browser by modifying the DOM via JavaScript **BEFORE** taking the screenshot.
@@ -123,7 +170,7 @@ Use CSS filters (blur) or pixelation only if DOM modification is impossible.
 
 ---
 
-### 6. Masking Metadata (REQUIRED if masking is applied)
+### 7. Masking Metadata (REQUIRED if masking is applied)
 
 If any data was altered or hidden:
 
@@ -164,5 +211,6 @@ Serve as a debugging and audit trail
 ## Goal
 
 * Every screenshot is reproducible
-* Every annotation is visible in `_annotated.png`
+* Every annotation is reproducible from `<name>.annotate.yml`
+* Every annotation is browser-calibrated before the task is finished
 * `.meta` fully describes navigation, annotations, and masking

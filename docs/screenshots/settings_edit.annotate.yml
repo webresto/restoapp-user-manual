@@ -1,0 +1,33 @@
+input: settings_edit.png
+description: "Settings Manager — панель редактирования настройки с полями и кнопкой сохранения."
+annotation_goal: "Показать правую панель редактирования: ключ, описание, тип и значение."
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    description: "Правая панель редактирования настройки"
+    target: "right panel: setting edit form"
+    success_criteria: "Прямоугольник охватывает всю правую панель"
+    x: 886
+    y: 180
+    width: 450
+    height: 400
+    label: "Редактирование настройки"
+  - type: oval
+    description: "Кнопка Save для сохранения изменений"
+    target: "Save button in the edit panel"
+    success_criteria: "Овал окружает кнопку Save"
+    x: 1270
+    y: 540
+    width: 90
+    height: 34
+    label: "Сохранить"
+  - type: rect
+    description: "Переключатель boolean-значения"
+    target: "boolean radio buttons for true/false"
+    success_criteria: "Прямоугольник охватывает группу переключателей"
+    x: 896
+    y: 440
+    width: 200
+    height: 60
+    label: "Значение"

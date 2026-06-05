@@ -1,0 +1,15 @@
+{
+  "name": "restoapp-user-manual-mocks",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "seed": "node seed-all.js",
+    "seed:notifications": "node seed-notifications.js",
+    "seed:settings": "node seed-settings.js",
+    "seed:orders-report": "node seed-orders-report.js",
+    "reset": "node reset.js"
+  },
+  "dependencies": {
+    "pg": "^8.11.0"
+  }
+}

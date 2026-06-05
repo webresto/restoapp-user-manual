@@ -1,0 +1,11 @@
+URL: http://localhost:42880/admin/settings-manager
+Path: Sidebar -> Settings -> Settings Manager -> click row
+Description: Панель редактирования настройки. Показывает ключ, описание, тип, значение и кнопку Save.
+
+Annotation:
+- Правая панель с полями ключ, описание, тип и значение
+- Boolean-переключатель для настроек типа boolean
+- Кнопка Save для сохранения
+
+Masking:
+- Нет персональных данных

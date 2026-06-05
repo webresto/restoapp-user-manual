@@ -7,14 +7,22 @@
 ## 🚫 Стоп-лист (Нет в наличии)
 Здесь отображаются все позиции, которые в данный момент находятся в стопе. Это первоначальный список, который актуализируется напрямую из RMS (iiko).
 
-![Нет в наличии](screenshots/stock_out_of_stock_annotated.png)
-*Рисунок 1: Список позиций в Стоп-листе.*
+<figure>
+  <div class="annotated-screenshot" data-annotation-config="screenshots/stock_out_of_stock.annotate.yml">
+    <img src="screenshots/stock_out_of_stock.png" alt="Нет в наличии" loading="lazy">
+  </div>
+  <figcaption>Рисунок 1: Список позиций в Стоп-листе.</figcaption>
+</figure>
 
 ## 🔍 Обзор склада
 Далее мы можем перейти во вкладку **Обзор**, где есть возможность перемещаться по папкам и категориям меню.
 
-![Обзор склада](screenshots/stock_overview_annotated.png)
-*Рисунок 2: Вкладка Обзора и навигации по папкам Менеджера склада.*
+<figure>
+  <div class="annotated-screenshot" data-annotation-config="screenshots/stock_overview.annotate.yml">
+    <img src="screenshots/stock_overview.png" alt="Обзор склада" loading="lazy">
+  </div>
+  <figcaption>Рисунок 2: Вкладка Обзора и навигации по папкам Менеджера склада.</figcaption>
+</figure>
 
 ### Управление группой (Глазик - Hide/Show)
 У каждой группы есть значок **Глазика** (Hide/Show), который мы можем включить или выключить. Это быстрое изменение его отображения на сайте (маркетинговое сокрытие). 
@@ -24,8 +32,12 @@
 ### Управление внутри группы (Действия с блюдом)
 Зайдя внутрь группы, мы управляем карточками конкретных блюд. Здесь доступны рычаги управления состоянием позиции.
 
-![Действия с блюдом](screenshots/stock_product_actions_annotated.png)
-*Рисунок 3: Управление состоянием блюда внутри группы.*
+<figure>
+  <div class="annotated-screenshot" data-annotation-config="screenshots/stock_product_actions.annotate.yml">
+    <img src="screenshots/stock_product_actions.png" alt="Действия с блюдом" loading="lazy">
+  </div>
+  <figcaption>Рисунок 3: Управление состоянием блюда внутри группы.</figcaption>
+</figure>
 
 Мы можем управлять 3 параметрами видимости блюда:
 1. **Disable / Enable (Выключить/Включить):** 

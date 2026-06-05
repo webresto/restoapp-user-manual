@@ -1,0 +1,33 @@
+input: notifications_detail.png
+description: "Notifications Manager — детальная панель открытого уведомления справа."
+annotation_goal: "Показать панель деталей: поля, статус и кнопку Retry delivery."
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    description: "Панель Notification details с полями уведомления"
+    target: "right panel: Notification details card"
+    success_criteria: "Прямоугольник охватывает всю правую панель деталей"
+    x: 886
+    y: 530
+    width: 450
+    height: 360
+    label: "Детали уведомления"
+  - type: oval
+    description: "Кнопка Retry delivery для повторной отправки"
+    target: "Retry delivery button in notification details header"
+    success_criteria: "Овал окружает кнопку Retry delivery"
+    x: 1210
+    y: 544
+    width: 140
+    height: 32
+    label: "Повторить отправку"
+  - type: rect
+    description: "Активная строка в списке — выделена синей полосой слева"
+    target: "selected notification row in the list"
+    success_criteria: "Прямоугольник охватывает первую строку списка"
+    x: 286
+    y: 570
+    width: 580
+    height: 90
+    label: "Выбранное уведомление"

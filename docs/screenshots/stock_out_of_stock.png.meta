@@ -4,5 +4,4 @@ Description: Shows all items that are currently out of stock. A celebratory mess
 
 Annotation:
 - Red oval around the "Нет в наличии" tab.
-- Red arrow highlighting the tab name.
-- Red text "Стоп-лист" below the tab.
+- Red arrow above the selected tab with the label "Стоп-лист".

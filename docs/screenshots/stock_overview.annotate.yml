@@ -1,0 +1,24 @@
+input: stock_overview.png
+output: stock_overview.annotated.png
+width: 2560
+height: 1272
+annotations:
+  - type: spotlight
+    x: 215
+    y: 190
+    width: 2130
+    height: 580
+    label: "Навигация по категориям"
+    opacity: 0.4
+  - type: rect
+    x: 748
+    y: 468
+    width: 262
+    height: 124
+    label: "Карточка категории"
+  - type: oval
+    x: 924
+    y: 472
+    width: 48
+    height: 42
+    label: "Видимость"

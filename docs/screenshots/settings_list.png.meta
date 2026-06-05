@@ -1,0 +1,11 @@
+URL: http://localhost:42880/admin/settings-manager
+Path: Sidebar -> Settings -> Settings Manager
+Description: Список системных настроек. Показывает ключи, значения и типы (string, boolean, json). Кнопки Export и Import справа вверху.
+
+Annotation:
+- Список настроек с колонками Key, Value, Type
+- Типы настроек: Type string, Type boolean, Type json
+- Кнопки Export и Import в правом верхнем углу
+
+Masking:
+- Нет персональных данных

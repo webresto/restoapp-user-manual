@@ -3,7 +3,6 @@ Path: Sidebar -> Catalog -> Stock Manager -> "Обзор" tab -> Select a catego
 Description: Controls for individual products. Includes status toggle, visibility toggle, and stock adjustment buttons (+/-, unlimited).
 
 Annotation:
-- Red arrow pointing to the "Работает (адм. статус)" checkbox.
-- Red circle around the visibility eye icon (top right of the card).
-- Red box around the stock adjustment buttons (- / + / ∞).
-- Red text "Управление остатками" at the bottom of the card.
+- Red arrow pointing to the enable/disable toggle group.
+- Red oval around the hide/show visibility toggle.
+- Red box around the stock adjustment controls with the label "Управление остатками".

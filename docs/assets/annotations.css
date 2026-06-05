@@ -1,0 +1,36 @@
+.annotated-screenshot {
+  display: inline-block;
+  margin: 0;
+  max-width: 100%;
+  position: relative;
+}
+
+.annotated-screenshot img {
+  display: block;
+  height: auto;
+  margin: 0;
+  max-width: 100%;
+}
+
+.annotated-screenshot--cropped {
+  aspect-ratio: var(--crop-aspect-ratio);
+  max-width: 100%;
+  overflow: hidden;
+  width: min(var(--crop-width), 100%);
+}
+
+.annotated-screenshot--cropped img {
+  transform-origin: top left;
+}
+
+.annotated-screenshot__overlay {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.annotated-screenshot__overlay svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

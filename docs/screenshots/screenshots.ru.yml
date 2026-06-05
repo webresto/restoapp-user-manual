@@ -1,0 +1,68 @@
+language: ru
+items:
+  - page: catalog.ru.md
+    title: "Просмотр дерева каталога"
+    image: catalog_tree.png
+  - page: catalog.ru.md
+    title: "Действия с продуктом"
+    image: product_actions.png
+  - page: orders.ru.md
+    title: "Просмотр заказов в режиме Стопка"
+    image: orders_stack.png
+  - page: orders.ru.md
+    title: "Просмотр заказов в режиме Канбан"
+    image: orders_kanban.png
+  - page: stock-manager.ru.md
+    title: "Нет в наличии"
+    image: stock_out_of_stock.png
+    config: stock_out_of_stock.annotate.yml
+  - page: stock-manager.ru.md
+    title: "Обзор склада"
+    image: stock_overview.png
+    config: stock_overview.annotate.yml
+  - page: stock-manager.ru.md
+    title: "Действия с блюдом"
+    image: stock_product_actions.png
+    config: stock_product_actions.annotate.yml
+  - page: stock-manager.ru.md
+    title: "Сортировка"
+    image: stock_sorting.png
+  - page: stock-manager.ru.md
+    title: "Режим списка"
+    image: stock_list_view.png
+  - page: users-and-groups.ru.md
+    title: "Список пользователей"
+    image: platform_users.png
+  - page: users-and-groups.ru.md
+    title: "Меню действий пользователя"
+    image: user_actions.png
+  - page: users-and-groups.ru.md
+    title: "Список групп"
+    image: platform_groups.png
+  - page: users-and-groups.ru.md
+    title: "Матрица разрешений"
+    image: group_permissions.png
+  - page: notifications-manager.ru.md
+    title: "Список уведомлений"
+    image: notifications_list.png
+    config: notifications_list.annotate.yml
+  - page: notifications-manager.ru.md
+    title: "Детали уведомления"
+    image: notifications_detail.png
+    config: notifications_detail.annotate.yml
+  - page: settings-manager.ru.md
+    title: "Список настроек"
+    image: settings_list.png
+    config: settings_list.annotate.yml
+  - page: settings-manager.ru.md
+    title: "Редактирование настройки"
+    image: settings_edit.png
+    config: settings_edit.annotate.yml
+  - page: orders-report.ru.md
+    title: "Отчёт по заказам"
+    image: orders_report.png
+    config: orders_report.annotate.yml
+  - page: fcm-settings.ru.md
+    title: "Настройки FCM Mobile push"
+    image: fcm_settings.png
+    config: fcm_settings.annotate.yml

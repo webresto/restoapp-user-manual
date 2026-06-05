@@ -1,0 +1,20 @@
+language: en
+items:
+  - page: orders.md
+    title: "Order lookup in Stack mode"
+    image: orders_stack.png
+  - page: orders.md
+    title: "Order lookup in Kanban mode"
+    image: orders_kanban.png
+  - page: users-and-groups.md
+    title: "User list"
+    image: platform_users.png
+  - page: users-and-groups.md
+    title: "User action menu"
+    image: user_actions.png
+  - page: users-and-groups.md
+    title: "Group list"
+    image: platform_groups.png
+  - page: users-and-groups.md
+    title: "Permission matrix"
+    image: group_permissions.png

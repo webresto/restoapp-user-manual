@@ -1,0 +1,33 @@
+input: settings_list.png
+description: "Settings Manager — список системных настроек с типами и кнопками экспорта/импорта."
+annotation_goal: "Показать список настроек, типы значений и кнопки управления."
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    description: "Список системных настроек с колонками Key, Value, Type"
+    target: "settings table with rows"
+    success_criteria: "Прямоугольник охватывает таблицу настроек"
+    x: 286
+    y: 270
+    width: 980
+    height: 500
+    label: "Список настроек"
+  - type: oval
+    description: "Кнопка Export для выгрузки настроек"
+    target: "Export button top-right"
+    success_criteria: "Овал окружает кнопку Export"
+    x: 1180
+    y: 196
+    width: 90
+    height: 32
+    label: "Экспорт"
+  - type: oval
+    description: "Кнопка Import для загрузки настроек"
+    target: "Import button top-right"
+    success_criteria: "Овал окружает кнопку Import"
+    x: 1280
+    y: 196
+    width: 90
+    height: 32
+    label: "Импорт"

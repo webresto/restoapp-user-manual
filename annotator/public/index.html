@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Screenshot Annotator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Screenshot Annotator</h1>
+        <p id="status" data-testid="status">Loading...</p>
+      </div>
+      <div class="actions">
+        <a class="button-link" href="/all">Preview All</a>
+        <button id="calibrate" data-testid="calibrate-button" type="button">Calibrate</button>
+        <button id="render" data-testid="render-button" type="button">Render</button>
+        <button id="save-render" data-testid="save-render-button" type="button">Save + Render</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="editor-panel" aria-label="Annotation config">
+        <div class="panel-title">
+          <span id="current-config">Config</span>
+          <span id="annotation-count" data-testid="annotation-count"></span>
+        </div>
+        <textarea id="config-editor" data-testid="config-editor" spellcheck="false"></textarea>
+      </section>
+
+      <section class="preview-panel" aria-label="Preview">
+        <div class="preview-tabs">
+          <button class="tab active" id="show-output" type="button">Annotated</button>
+          <button class="tab" id="show-input" type="button">Original</button>
+          <button class="tab preview-toggle" id="toggle-preview" data-testid="toggle-preview" type="button">Show Preview</button>
+          <button class="tab preview-pin" id="pin-preview" data-testid="pin-preview" type="button">Pin</button>
+        </div>
+        <div class="preview-frame">
+          <img id="preview" data-testid="preview-image" alt="Annotated screenshot preview" />
+        </div>
+      </section>
+
+      <section class="agent-panel" aria-label="Annotation agent">
+        <div class="panel-title agent-panel__title">
+          <span>Agent Chat</span>
+          <span class="agent-status">
+            <span id="agent-indicator" class="agent-indicator" data-testid="agent-indicator" aria-hidden="true"></span>
+            <span id="agent-status" data-testid="agent-status">Idle</span>
+          </span>
+        </div>
+        <div id="agent-log" class="agent-log" data-testid="agent-log" aria-live="polite"></div>
+        <form id="agent-form" class="agent-form" data-testid="agent-form">
+          <textarea
+            id="agent-message"
+            data-testid="agent-message"
+            rows="2"
+            placeholder="Ask the agent to adjust only this annotation..."
+          ></textarea>
+          <button id="agent-stop" data-testid="agent-stop" type="button" disabled>Stop</button>
+          <button id="agent-send" data-testid="agent-send" type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

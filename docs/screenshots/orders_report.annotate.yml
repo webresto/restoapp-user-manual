@@ -1,0 +1,33 @@
+input: orders_report.png
+description: "Orders Report — сводный отчёт по заказам с разбивкой по платформам и статусам."
+annotation_goal: "Показать навигацию по периоду и таблицу с метриками."
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    description: "Панель выбора периода с навигацией по месяцам и полями дат"
+    target: "date navigation bar with month arrows and From/To date inputs"
+    success_criteria: "Прямоугольник охватывает строку выбора периода"
+    x: 296
+    y: 172
+    width: 1010
+    height: 44
+    label: "Период отчёта"
+  - type: rect
+    description: "Таблица отчёта с платформами, количеством заказов и выручкой"
+    target: "report table with Platform, Total, Revenue columns"
+    success_criteria: "Прямоугольник охватывает таблицу с данными"
+    x: 296
+    y: 242
+    width: 1010
+    height: 120
+    label: "Сводная таблица"
+  - type: oval
+    description: "Статус Done — количество выполненных заказов"
+    target: "Done column value in the data row"
+    success_criteria: "Овал окружает ячейку Done"
+    x: 1100
+    y: 296
+    width: 80
+    height: 32
+    label: "Выполнено"

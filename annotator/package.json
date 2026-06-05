@@ -1,0 +1,33 @@
+{
+  "name": "restoapp-screenshot-annotator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Small CLI for generating annotated screenshots from YAML or JSON configs.",
+  "bin": {
+    "annotate-image": "./bin/annotate.js",
+    "calibrate-annotation": "./bin/calibrate.js",
+    "annotator-server": "./bin/serve.js",
+    "build-annotations": "./bin/build-all.js"
+  },
+  "scripts": {
+    "annotate": "node bin/annotate.js examples/screen.annotate.yml",
+    "build": "vite build",
+    "calibrate": "node bin/calibrate.js",
+    "dev": "vite",
+    "serve": "node bin/serve.js examples/screen.annotate.yml",
+    "build:annotations": "node bin/build-all.js"
+  },
+  "dependencies": {
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@tailwindcss/vite": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "commander": "^12.1.0",
+    "js-yaml": "^4.1.0",
+    "lucide-react": "^1.17.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.0.16"
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>All Annotation Previews</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>All Annotation Previews</h1>
+        <p id="all-status" data-testid="all-status">Loading previews...</p>
+      </div>
+      <div class="actions">
+        <div class="language-filter" id="language-filter" data-testid="language-filter"></div>
+        <a class="button-link" href="/">Open Editor</a>
+      </div>
+    </header>
+
+    <main class="all-previews" id="all-previews" data-testid="all-previews"></main>
+
+    <template id="language-filter-button-template">
+      <button class="filter-button" type="button"></button>
+    </template>
+
+    <template id="language-section-template">
+      <section class="language-section">
+        <div class="language-section__header">
+          <h2 class="language-section__title"></h2>
+          <p class="language-section__meta"></p>
+        </div>
+        <div class="language-section__list"></div>
+      </section>
+    </template>
+
+    <template id="preview-card-template">
+      <article class="preview-card">
+        <div class="preview-card__header">
+          <div>
+            <h2 class="preview-card__title"></h2>
+            <p class="preview-card__meta"></p>
+          </div>
+          <a class="button-link preview-card__edit" href="">Edit</a>
+        </div>
+        <div class="preview-card__frame">
+          <div class="annotated-screenshot">
+            <img class="annotated-screenshot__image" alt="" />
+            <div class="annotated-screenshot__overlay"></div>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="/all.js"></script>
+  </body>
+</html>

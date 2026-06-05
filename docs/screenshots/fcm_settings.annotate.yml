@@ -1,0 +1,33 @@
+input: fcm_settings.png
+description: "FCM Mobile push — страница настройки Firebase Cloud Messaging для iOS и Android."
+annotation_goal: "Показать блок загрузки ключа и статус конфигурации."
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    description: "Заголовок страницы с бейджем статуса конфигурации"
+    target: "page title FCM Mobile push with Not configured badge"
+    success_criteria: "Прямоугольник охватывает заголовок и бейдж"
+    x: 286
+    y: 100
+    width: 440
+    height: 40
+    label: "Статус канала"
+  - type: rect
+    description: "Блок загрузки Service account JSON"
+    target: "Service account JSON upload card"
+    success_criteria: "Прямоугольник охватывает блок загрузки ключа"
+    x: 286
+    y: 258
+    width: 1040
+    height: 248
+    label: "Service account JSON"
+  - type: oval
+    description: "Кнопка Save для сохранения настроек"
+    target: "Save button"
+    success_criteria: "Овал окружает кнопку Save"
+    x: 406
+    y: 204
+    width: 80
+    height: 32
+    label: "Сохранить"

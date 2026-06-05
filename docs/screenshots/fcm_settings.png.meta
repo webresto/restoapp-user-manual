@@ -1,0 +1,13 @@
+URL: http://localhost:42880/admin/firebase-notifications/mobile
+Path: Sidebar -> Platform -> FCM Mobile push
+Description: Настройка FCM Mobile push для iOS и Android. Показывает статус конфигурации, поле загрузки Service account JSON и раздел APNs для iOS.
+
+Annotation:
+- Заголовок с бейджем статуса (Not configured / Configured)
+- Блок загрузки Service account JSON (Upload JSON file, drag-and-drop)
+- Блок текущего ключа: project_id, client_email, private_key_id
+- Раздел APNs for iOS ниже
+- Кнопки Refresh и Save вверху
+
+Masking:
+- Нет персональных данных (ключ не загружен)
