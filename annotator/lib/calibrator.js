@@ -117,6 +117,7 @@ function validateCalibrationConfig(config, { allowMissingDescriptions = false } 
 }
 
 function buildCodexCalibrationPrompt({ configPath, serverUrl, maxIterations, instruction, validation }) {
+  const encoded = encodeURIComponent(configPath);
   return `
 You are a local screenshot annotation calibration agent for exactly one annotation file.
 
@@ -127,8 +128,12 @@ Scope:
 - Do not invent new documentation content.
 - Do not edit unrelated files.
 - Use the already running annotator server: ${serverUrl}
-- Editor URL: ${serverUrl}/?config=${encodeURIComponent(configPath)}
-- Rendered output URL: ${serverUrl}/output.png?config=${encodeURIComponent(configPath)}
+
+Hard constraints (stay efficient — do NOT wander):
+- Do NOT read or inspect the annotator's own source code (anything under the annotator/ directory).
+- Do NOT write pixel-scanning scripts (no Python/PIL, no image analysis programs). Judge alignment visually from the rendered preview and the source screenshot.
+- Do NOT explore or guess API routes. The only endpoints you need are the two exact commands below.
+- Keep coordinates in ORIGINAL screenshot pixels; any crop is applied automatically by the renderer.
 
 Input contract:
 - The YAML already contains factual annotation objects.
@@ -136,15 +141,16 @@ Input contract:
 - Use annotations[].description, annotations[].target, and annotations[].success_criteria as the calibration criteria.
 - There are ${validation.annotationCount} annotation object(s).
 
-Task:
-1. Read the YAML file.
-2. Open the annotator UI or use POST /api/render on the server.
-3. Inspect the rendered preview.
-4. Adjust only annotation geometry, label placement/text, and crop if needed for visual alignment.
-5. Preserve factual description fields unless a wording fix is directly needed to match the existing annotation.
-6. Render after each adjustment.
-7. Iterate up to ${Number(maxIterations) || 5} times.
-8. Save the final YAML when the annotations are visually acceptable.
+Calibration loop (follow exactly):
+1. Read the YAML file: ${configPath}
+2. Read the clean source screenshot named by the YAML "input" field (it lives in the same folder) to learn the real UI layout.
+3. View the current render — fetch it to a temp file and open it as an image:
+   curl -s "${serverUrl}/output.png?config=${encoded}&t=$(date +%s%N)" -o /tmp/calibration_preview.png
+4. Compare each red mark to its described target. If everything aligns, stop.
+5. Otherwise edit ONLY numeric geometry (x, y, width, height, from, to), label text, and label placement directly in the YAML file. Preserve factual description fields unless a wording fix is required.
+6. Re-render from the saved file (renders the file on disk; no body needed):
+   curl -s -X POST "${serverUrl}/api/render?config=${encoded}" -H "Content-Type: application/json" -d '{}'
+7. Go back to step 3. Do at most ${Number(maxIterations) || 5} edit iterations, then stop even if imperfect.
 
 Acceptance criteria:
 - Each mark aligns with its described target.

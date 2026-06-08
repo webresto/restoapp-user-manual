@@ -29,8 +29,11 @@ const AGENT_ENGINES = {
     command: process.env.ANNOTATOR_CLAUDE_COMMAND || "claude",
     args:
       process.env.ANNOTATOR_CLAUDE_ARGS ||
-      // sonnet = middle model (claude CLI has no separate reasoning-effort flag)
-      `-p --permission-mode bypassPermissions --model sonnet`,
+      // sonnet = middle model (claude CLI has no separate reasoning-effort flag).
+      // stream-json (+ --verbose --include-partial-messages) makes claude stream its
+      // thinking, text, and tool calls live; the server parses them into log lines.
+      `-p --output-format stream-json --verbose --include-partial-messages --permission-mode bypassPermissions --model sonnet`,
+    stream: "claude-json",
   },
 };
 const DEFAULT_AGENT_ENGINE = process.env.ANNOTATOR_AGENT_ENGINE || "codex";
@@ -194,8 +197,27 @@ async function startServer({ configPath, port }) {
 
   await new Promise((resolve) => server.listen(port, resolve));
 
+  // Auto-render when the config file changes on disk (direct edits, external tools).
+  // watchFile polls mtime, so it survives editors that replace the file atomically.
+  let rerenderTimer = null;
+  const onConfigFileChange = (curr, prev) => {
+    if (curr.mtimeMs === prev.mtimeMs) return;
+    clearTimeout(rerenderTimer);
+    rerenderTimer = setTimeout(() => {
+      generateFromConfigFile(resolvedConfigPath).catch((error) => {
+        console.error(`Auto-render after file change failed: ${error.message}`);
+      });
+    }, 250);
+  };
+  fs.watchFile(resolvedConfigPath, { interval: 1000 }, onConfigFileChange);
+
   return {
-    close: () => new Promise((resolve) => server.close(resolve)),
+    close: () =>
+      new Promise((resolve) => {
+        clearTimeout(rerenderTimer);
+        fs.unwatchFile(resolvedConfigPath, onConfigFileChange);
+        server.close(resolve);
+      }),
     port: server.address().port,
   };
 }
@@ -268,7 +290,11 @@ async function startAgentJob({ jobs, id, configPath, serverUrl, body }) {
   }, job.timeoutMs);
 
   child.stdin.end(prompt);
-  child.stdout.on("data", (chunk) => appendJobLog(job, "stdout", chunk.toString("utf8")));
+  const onStdout =
+    engine.stream === "claude-json"
+      ? makeClaudeStreamHandler(job)
+      : (chunk) => appendJobLog(job, "stdout", chunk.toString("utf8"));
+  child.stdout.on("data", onStdout);
   child.stderr.on("data", (chunk) => appendJobLog(job, "stderr", chunk.toString("utf8")));
   child.on("error", (error) => {
     job.status = "failed";
@@ -295,6 +321,104 @@ async function startAgentJob({ jobs, id, configPath, serverUrl, body }) {
   });
 
   return job;
+}
+
+// Parse claude --output-format stream-json --include-partial-messages (newline-delimited
+// JSON) into live log lines so the UI streams the agent's thinking, text, and tool calls
+// in real time instead of staying silent until each turn completes.
+function makeClaudeStreamHandler(job) {
+  let buffer = "";
+  let active = null; // currently streaming content block: { stream, created }
+
+  const startBlock = (stream) => {
+    active = { stream, created: false };
+  };
+  const appendDelta = (text) => {
+    if (!active || !text) return;
+    if (!active.created) {
+      appendJobLog(job, active.stream, text);
+      active.created = true;
+    } else {
+      const last = job.log[job.log.length - 1];
+      if (last) last.text += text;
+    }
+  };
+  const endBlock = () => {
+    if (active && active.created) {
+      const last = job.log[job.log.length - 1];
+      if (last && !String(last.text).trim()) job.log.pop();
+    }
+    active = null;
+  };
+
+  return (chunk) => {
+    buffer += chunk.toString("utf8");
+    let newlineIndex;
+    while ((newlineIndex = buffer.indexOf("\n")) >= 0) {
+      const line = buffer.slice(0, newlineIndex).trim();
+      buffer = buffer.slice(newlineIndex + 1);
+      if (!line) continue;
+      let event;
+      try {
+        event = JSON.parse(line);
+      } catch {
+        continue;
+      }
+      handleClaudeEvent(job, event, { startBlock, appendDelta, endBlock });
+    }
+  };
+}
+
+function handleClaudeEvent(job, event, { startBlock, appendDelta, endBlock }) {
+  if (event.type === "system" && event.subtype === "init") {
+    appendJobLog(job, "system", `claude session started (${event.model || "model"})`);
+    return;
+  }
+
+  // Live deltas (requires --include-partial-messages).
+  if (event.type === "stream_event" && event.event) {
+    const e = event.event;
+    if (e.type === "content_block_start") {
+      const block = e.content_block || {};
+      if (block.type === "thinking") startBlock("thinking");
+      else if (block.type === "text") startBlock("stdout");
+      else if (block.type === "tool_use") appendJobLog(job, "tool", `→ ${block.name || "tool"}`);
+    } else if (e.type === "content_block_delta") {
+      const delta = e.delta || {};
+      if (delta.type === "thinking_delta") appendDelta(delta.thinking || "");
+      else if (delta.type === "text_delta") appendDelta(delta.text || "");
+    } else if (e.type === "content_block_stop") {
+      endBlock();
+    }
+    return;
+  }
+
+  // Tool results returned to the agent (transparency on what it observed).
+  if (event.type === "user" && Array.isArray(event.message?.content)) {
+    for (const block of event.message.content) {
+      if (block.type === "tool_result") {
+        const text = extractToolResultText(block.content).slice(0, 300);
+        if (text.trim()) appendJobLog(job, "tool", `⤷ ${text.trim()}`);
+      }
+    }
+    return;
+  }
+
+  if (event.type === "result") {
+    endBlock();
+    if (event.is_error) appendJobLog(job, "error", "claude reported an error result.");
+  }
+}
+
+function extractToolResultText(content) {
+  if (typeof content === "string") return content;
+  if (Array.isArray(content)) {
+    return content
+      .map((part) => (typeof part === "string" ? part : part?.type === "text" ? part.text : ""))
+      .filter(Boolean)
+      .join(" ");
+  }
+  return "";
 }
 
 function stopAgentJob(job) {

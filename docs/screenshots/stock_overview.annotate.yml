@@ -7,7 +7,7 @@ annotations:
     x: 215
     y: 190
     width: 2130
-    height: 580
+    height: 430
     label: "Навигация по категориям"
     opacity: 0.4
   - type: rect
@@ -17,7 +17,7 @@ annotations:
     height: 124
     label: "Карточка категории"
   - type: oval
-    x: 924
+    x: 975
     y: 472
     width: 48
     height: 42

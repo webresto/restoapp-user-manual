@@ -12,8 +12,6 @@ import {
   Image,
   Pin,
   PinOff,
-  Play,
-  Save,
   Send,
   Settings2,
   ShieldCheck,
@@ -158,6 +156,8 @@ function EditorApp() {
   const lastPreviewRefreshAt = useRef(0);
   const previewAutoCloseTimer = useRef(null);
   const agentLogRef = useRef(null);
+  // Tracks the last text persisted to disk so the autosave effect only fires on real edits.
+  const savedConfigRef = useRef(null);
 
   const withConfig = (endpoint) => {
     if (!selectedConfig && !selectedImage) return endpoint;
@@ -179,6 +179,7 @@ function EditorApp() {
     Promise.all([fetchText(withConfig("/api/config")), fetchJson(withConfig("/api/state"))])
       .then(([text, nextState]) => {
         if (!mounted) return;
+        savedConfigRef.current = text;
         setConfigText(text);
         updateState(nextState);
       })
@@ -218,7 +219,51 @@ function EditorApp() {
     }
   }, [agentEngine]);
 
-  const previewSrc = previewMode === "input" || !state?.outputUrl ? state?.inputUrl : state?.outputUrl;
+  // Debounced autosave: persist + re-render whenever the config text changes.
+  useEffect(() => {
+    if (savedConfigRef.current === null) return undefined; // not loaded yet
+    if (activeAgentJobId) return undefined; // don't fight a running agent
+    if (configText === savedConfigRef.current) return undefined; // no real change
+    const handle = window.setTimeout(() => {
+      render(true).catch((error) => setStatus(`Error: ${error.message}`));
+    }, 900);
+    return () => window.clearTimeout(handle);
+  }, [configText, activeAgentJobId]);
+
+  // Pick up external changes (direct file edits, API, agent) and refresh editor + preview.
+  useEffect(() => {
+    if (activeAgentJobId) return undefined; // agent job has its own polling
+    const interval = window.setInterval(async () => {
+      // Skip while the user has unsaved local edits, so we never clobber them.
+      if (savedConfigRef.current !== null && configText !== savedConfigRef.current) return;
+      try {
+        const [text, nextState] = await Promise.all([
+          fetchText(withConfig("/api/config")),
+          fetchJson(withConfig("/api/state")),
+        ]);
+        if (text !== savedConfigRef.current) {
+          savedConfigRef.current = text;
+          setConfigText(text);
+          setStatus("Updated from disk");
+        }
+        if (nextState.outputUrl !== state?.outputUrl || nextState.inputUrl !== state?.inputUrl) {
+          updateState(nextState, { preserveStatus: true });
+        }
+      } catch {
+        // ignore transient polling errors
+      }
+    }, PREVIEW_REFRESH_INTERVAL_MS);
+    return () => window.clearInterval(interval);
+  }, [activeAgentJobId, configText, state?.outputUrl, state?.inputUrl]);
+
+  // Fall back to the clean source if the annotated output transiently fails to load
+  // (e.g. while it is being re-rendered), so the preview never goes blank.
+  const [outputError, setOutputError] = useState(false);
+  useEffect(() => {
+    setOutputError(false);
+  }, [state?.outputUrl]);
+  const showOutput = previewMode !== "input" && Boolean(state?.outputUrl) && !outputError;
+  const previewSrc = showOutput ? state?.outputUrl : state?.inputUrl;
   const previewVisible = previewOpen || previewPinned;
   const isAgentBusy = Boolean(activeAgentJobId);
 
@@ -234,12 +279,14 @@ function EditorApp() {
   }
 
   async function render(save) {
-    setStatus(save ? "Saving and rendering..." : "Rendering...");
+    setStatus(save ? "Saving..." : "Rendering...");
+    const textAtCall = configText;
     const nextState = await fetchJson(withConfig("/api/render"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ configText, save }),
+      body: JSON.stringify({ configText: textAtCall, save }),
     });
+    if (save) savedConfigRef.current = textAtCall;
     updateState(nextState);
   }
 
@@ -283,7 +330,9 @@ function EditorApp() {
         setActiveAgentJobId(null);
         if (job.state) {
           updateState(job.state);
-          setConfigText(await fetchText(withConfig("/api/config")));
+          const latestConfig = await fetchText(withConfig("/api/config"));
+          savedConfigRef.current = latestConfig;
+          setConfigText(latestConfig);
         }
         setAgentStatus(finalAgentStatusLabel(job.status));
       } catch (error) {
@@ -375,12 +424,6 @@ function EditorApp() {
             <Button variant="soft" onClick={() => startAgentJob("calibrate", "").catch((error) => setAgentStatus(error.message))} disabled={isAgentBusy}>
               <Sparkles size={16} /> Calibrate
             </Button>
-            <Button variant="soft" onClick={() => render(false).catch((error) => setStatus(`Error: ${error.message}`))} disabled={isAgentBusy} data-testid="render-button">
-              <Play size={16} /> Render
-            </Button>
-            <Button variant="primary" onClick={() => render(true).catch((error) => setStatus(`Error: ${error.message}`))} disabled={isAgentBusy} data-testid="save-render-button">
-              <Save size={16} /> Save + Render
-            </Button>
           </div>
         </div>
       </header>
@@ -436,7 +479,7 @@ function EditorApp() {
           <div className="min-h-0 overflow-auto bg-checker p-3">
             {previewSrc ? (
               <div className="flex min-h-full items-center justify-center">
-                <img className="max-h-[calc(100vh-170px)] max-w-full rounded-md border border-neutral-200 bg-white shadow-sm" src={previewSrc} alt="Screenshot preview" data-testid="preview-image" />
+                <img className="max-h-[calc(100vh-170px)] max-w-full rounded-md border border-neutral-200 bg-white shadow-sm" src={previewSrc} alt="Screenshot preview" data-testid="preview-image" onError={() => showOutput && setOutputError(true)} />
               </div>
             ) : (
               <div className="flex h-48 items-center justify-center text-sm text-neutral-500">No rendered output yet</div>
@@ -510,24 +553,36 @@ function AgentStatus({ status, label }) {
   );
 }
 
+const STREAM_META = {
+  user: { label: "You", border: "border-blue-200", chip: "bg-blue-100 text-blue-700" },
+  thinking: { label: "Thinking", border: "border-violet-200", chip: "bg-violet-100 text-violet-700", muted: true },
+  tool: { label: "Tool", border: "border-amber-200", chip: "bg-amber-100 text-amber-700" },
+  stdout: { label: "Agent", border: "border-emerald-200", chip: "bg-emerald-100 text-emerald-700" },
+  system: { label: "System", border: "border-neutral-200", chip: "bg-neutral-100 text-neutral-600" },
+  stderr: { label: "Error", border: "border-red-200", chip: "bg-red-100 text-red-700" },
+  error: { label: "Error", border: "border-red-200", chip: "bg-red-100 text-red-700" },
+};
+
 function AgentMessage({ entry, expanded, onToggle }) {
   const text = String(entry.text || "").trim() || "(empty)";
   const isLong = text.length > LONG_MESSAGE_LIMIT || text.split("\n").length > 14;
   const stream = entry.stream || "system";
+  const meta = STREAM_META[stream] || STREAM_META.system;
   return (
-    <article
-      className={cn(
-        "grid gap-1 rounded-md border bg-white p-3 shadow-sm",
-        stream === "user" && "border-blue-200",
-        ["stdout", "system"].includes(stream) && "border-emerald-200",
-        ["stderr", "error"].includes(stream) && "border-red-200",
-      )}
-    >
+    <article className={cn("grid gap-1 rounded-md border bg-white p-3 shadow-sm", meta.border)}>
       <div className="flex items-center justify-between gap-2">
-        <span className="text-[11px] font-semibold uppercase text-neutral-500">{stream}</span>
+        <span className={cn("rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide", meta.chip)}>{meta.label}</span>
         {stream === "system" && <CheckCircle2 className="text-emerald-600" size={14} />}
       </div>
-      <pre className={cn("whitespace-pre-wrap break-words font-mono text-xs leading-5 text-neutral-900", isLong && !expanded && "max-h-28 overflow-hidden")}>{text}</pre>
+      <pre
+        className={cn(
+          "whitespace-pre-wrap break-words font-mono text-xs leading-5 text-neutral-900",
+          meta.muted && "italic text-neutral-500",
+          isLong && !expanded && "max-h-28 overflow-hidden",
+        )}
+      >
+        {text}
+      </pre>
       {isLong && (
         <Button className="h-7 justify-self-start px-2 text-xs" variant="ghost" type="button" onClick={onToggle}>
           {expanded ? "Hide message" : "Show full message"}

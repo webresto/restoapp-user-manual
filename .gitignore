@@ -29,3 +29,6 @@ Thumbs.db
 *~
 .idea/
 .vscode/
+
+# agent runtime poll script
+.poll.mjs
