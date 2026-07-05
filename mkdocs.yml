@@ -62,9 +62,13 @@ plugins:
                 - 'Каталог блюд': catalog.md
                 - 'Менеджер склада': stock-manager.md
                 - 'Управление заказами': orders.md
+                - 'Каналы продаж': sales-channels.md
+                - 'Маркетинг': marketing.md
                 - 'Пользователи и группы': users-and-groups.md
                 - 'Менеджер уведомлений': notifications-manager.md
+                - 'Каналы уведомлений': notification-channels.md
                 - 'Менеджер настроек': settings-manager.md
+                - 'Чек-лист настройки': setup-checklist.md
                 - 'Отчёт по заказам': orders-report.md
                 - 'Настройки FCM': fcm-settings.md
 
@@ -74,9 +78,13 @@ nav:
       - 'Product Catalog': catalog.md
       - 'Stock Manager': stock-manager.md
       - 'Order Management': orders.md
+      - 'Sales Channels': sales-channels.md
+      - 'Marketing': marketing.md
       - 'Users and Groups': users-and-groups.md
       - 'Notifications Manager': notifications-manager.md
+      - 'Notification Channels': notification-channels.md
       - 'Settings Manager': settings-manager.md
+      - 'Setup Checklist': setup-checklist.md
       - 'Orders Report': orders-report.md
       - 'FCM Settings': fcm-settings.md
 

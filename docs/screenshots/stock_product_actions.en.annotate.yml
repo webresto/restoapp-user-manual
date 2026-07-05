@@ -1,0 +1,22 @@
+input: stock_product_actions.png
+width: 2048
+height: 1024
+annotations:
+  - type: rect
+    x: 374
+    y: 508
+    width: 196
+    height: 44
+    label: "Disable/Enable"
+  - type: oval
+    x: 578
+    y: 508
+    width: 262
+    height: 44
+    label: "Hide/Show"
+  - type: rect
+    x: 394
+    y: 860
+    width: 414
+    height: 100
+    label: "Stock controls"

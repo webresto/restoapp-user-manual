@@ -1,0 +1,22 @@
+input: marketing_promotions_form.ru.png
+width: 1440
+height: 1100
+annotations:
+  - type: rect
+    x: 732
+    y: 303
+    width: 125
+    height: 38
+    label: "Форма / JSON"
+  - type: rect
+    x: 1218
+    y: 242
+    width: 162
+    height: 40
+    label: "Сохранить / Удалить"
+  - type: rect
+    x: 738
+    y: 836
+    width: 235
+    height: 40
+    label: "Тип скидки"

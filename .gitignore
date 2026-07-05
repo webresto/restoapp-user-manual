@@ -5,6 +5,7 @@
 
 # --- Dependencies ---
 node_modules/
+.venv/
 
 # --- Build / generated output ---
 # mkdocs build
@@ -13,10 +14,13 @@ site/
 annotator/dist/
 # runtime annotation/playwright output
 output/
+docs/screenshots/*.annotated.png
 
 # --- Runtime / tooling junk ---
 # playwright CLI screenshots, logs, page dumps
+.claude/
 .playwright-cli/
+tasks
 *.tmp
 *.tmp.yml
 *.log

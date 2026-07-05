@@ -1,0 +1,22 @@
+input: setup_checklist_overview.ru.png
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    x: 298
+    y: 182
+    width: 362
+    height: 26
+    label: "Сводка прогресса"
+  - type: rect
+    x: 1298
+    y: 180
+    width: 112
+    height: 28
+    label: "Показать скрытые"
+  - type: rect
+    x: 1288
+    y: 286
+    width: 112
+    height: 28
+    label: "Перейти к настройке"

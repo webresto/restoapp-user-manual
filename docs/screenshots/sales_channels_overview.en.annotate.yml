@@ -1,0 +1,22 @@
+input: sales_channels_overview.png
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    x: 1186
+    y: 114
+    width: 206
+    height: 40
+    label: "Create a channel"
+  - type: rect
+    x: 564
+    y: 303
+    width: 86
+    height: 28
+    label: "Status"
+  - type: rect
+    x: 334
+    y: 407
+    width: 140
+    height: 30
+    label: "Enable / disable"

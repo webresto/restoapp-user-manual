@@ -1,0 +1,8 @@
+URL: http://localhost:42880/admin/promotions-manager
+Path: Sidebar -> Marketing -> Promotions -> open a configured promotion
+Description: Configured promotion editor with a Form/JSON toggle and Basic, Discount and Applies-to blocks; Save and Delete actions.
+
+Annotation:
+- Form / JSON toggle
+- Save / Delete actions
+- Discount type (Percentage / Fixed amount)

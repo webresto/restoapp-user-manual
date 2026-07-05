@@ -1,0 +1,3 @@
+URL: http://localhost:42880/admin/promocodes-manager
+Path: Sidebar -> Marketing -> Promo codes -> Activity tab
+Description: Activity log of every order where a promo code was entered, with date/time, code, order, discount and status columns.

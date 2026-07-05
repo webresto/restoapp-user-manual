@@ -66,3 +66,28 @@ items:
     title: "Настройки FCM Mobile push"
     image: fcm_settings.png
     config: fcm_settings.annotate.yml
+  - page: marketing.ru.md
+    title: "Дашборд промокодов"
+    image: marketing_promocodes_dashboard.ru.png
+    config: marketing_promocodes_dashboard.ru.annotate.yml
+  - page: marketing.ru.md
+    title: "Список промокодов"
+    image: marketing_promocodes_list.ru.png
+  - page: marketing.ru.md
+    title: "Активность промокодов"
+    image: marketing_promocodes_activity.ru.png
+  - page: marketing.ru.md
+    title: "Список акций"
+    image: marketing_promotions_list.ru.png
+  - page: marketing.ru.md
+    title: "Форма настраиваемой акции"
+    image: marketing_promotions_form.ru.png
+    config: marketing_promotions_form.ru.annotate.yml
+  - page: notification-channels.ru.md
+    title: "Список каналов уведомлений"
+    image: notification_channels_list.ru.png
+    config: notification_channels_list.ru.annotate.yml
+  - page: setup-checklist.ru.md
+    title: "Обзор чек-листа настройки"
+    image: setup_checklist_overview.ru.png
+    config: setup_checklist_overview.ru.annotate.yml

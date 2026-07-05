@@ -1,0 +1,8 @@
+URL: http://localhost:42880/admin/promocodes-manager
+Path: Sidebar -> Marketing -> Promo codes -> Dashboard tab
+Description: Promo codes Dashboard. KPI cards (active codes, applications, total/average discount), the applications-over-time chart, top promo codes and application-status breakdown over a selectable period.
+
+Annotation:
+- Tabs (Dashboard / Promo codes / Activity)
+- Date range selector (7 / 30 / 90 days + Refresh)
+- Summary cards

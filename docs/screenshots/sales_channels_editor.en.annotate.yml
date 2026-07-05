@@ -1,0 +1,34 @@
+input: sales_channels_editor.png
+width: 1440
+height: 1345
+annotations:
+  - type: rect
+    x: 320
+    y: 281
+    width: 250
+    height: 33
+    label: "Title"
+  - type: rect
+    x: 583
+    y: 281
+    width: 252
+    height: 33
+    label: "Channel key (order source)"
+  - type: rect
+    x: 848
+    y: 281
+    width: 162
+    height: 33
+    label: "Type"
+  - type: rect
+    x: 320
+    y: 543
+    width: 534
+    height: 36
+    label: "Concept binding"
+  - type: rect
+    x: 320
+    y: 646
+    width: 234
+    height: 28
+    label: "Enabled = valid source"

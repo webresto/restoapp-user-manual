@@ -1,0 +1,16 @@
+input: sales_channels_recommended.ru.png
+width: 1088
+height: 227
+annotations:
+  - type: rect
+    x: 74
+    y: 124
+    width: 244
+    height: 22
+    label: "Статус модуля"
+  - type: rect
+    x: 28
+    y: 151
+    width: 328
+    height: 42
+    label: "Добавить канал"

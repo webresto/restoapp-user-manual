@@ -1,0 +1,22 @@
+input: setup_checklist_overview.png
+width: 1440
+height: 900
+annotations:
+  - type: rect
+    x: 298
+    y: 182
+    width: 362
+    height: 26
+    label: "Progress summary"
+  - type: rect
+    x: 1298
+    y: 180
+    width: 112
+    height: 28
+    label: "Show hidden"
+  - type: rect
+    x: 1288
+    y: 286
+    width: 112
+    height: 28
+    label: "Go to setup"

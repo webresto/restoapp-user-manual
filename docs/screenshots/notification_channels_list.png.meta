@@ -1,0 +1,8 @@
+URL: http://localhost:42880/admin/notification-channels
+Path: Sidebar -> Notifications -> Notification channels
+Description: Delivery channel list with Channel, Status, Enabled, Groups, Weight, Cost, Force send and Class columns and a Refresh channels action.
+
+Annotation:
+- Status (configured / Configure link)
+- Enabled toggle
+- Weight (priority)

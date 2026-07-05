@@ -1,0 +1,22 @@
+input: marketing_promotions_form.png
+width: 1440
+height: 1100
+annotations:
+  - type: rect
+    x: 732
+    y: 303
+    width: 125
+    height: 38
+    label: "Form / JSON"
+  - type: rect
+    x: 1218
+    y: 242
+    width: 162
+    height: 40
+    label: "Save / Delete"
+  - type: rect
+    x: 738
+    y: 836
+    width: 235
+    height: 40
+    label: "Discount type"

@@ -1,0 +1,23 @@
+input: stock_overview.png
+width: 2560
+height: 1272
+annotations:
+  - type: spotlight
+    x: 215
+    y: 190
+    width: 2130
+    height: 430
+    label: "Category navigation"
+    opacity: 0.4
+  - type: rect
+    x: 748
+    y: 468
+    width: 262
+    height: 124
+    label: "Category card"
+  - type: oval
+    x: 975
+    y: 472
+    width: 48
+    height: 42
+    label: "Visibility"

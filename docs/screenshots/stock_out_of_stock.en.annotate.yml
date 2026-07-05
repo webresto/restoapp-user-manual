@@ -1,0 +1,13 @@
+input: stock_out_of_stock.png
+width: 2048
+height: 1024
+annotations:
+  - type: oval
+    x: 383
+    y: 229
+    width: 170
+    height: 56
+  - type: arrow
+    from: [656, 171]
+    to: [528, 241]
+    label: "Stop-list"

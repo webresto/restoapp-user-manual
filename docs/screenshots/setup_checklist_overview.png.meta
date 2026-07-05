@@ -1,0 +1,8 @@
+URL: http://localhost:42880/admin/setup-checklist
+Path: Sidebar -> System -> Setup checklist
+Description: Setup checklist with overall progress, Required/Recommended/Optional summary, per-item status and Go to setup links.
+
+Annotation:
+- Progress summary (required/recommended chips)
+- Show hidden toggle
+- Go to setup link

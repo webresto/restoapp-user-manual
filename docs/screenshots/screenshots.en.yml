@@ -1,11 +1,35 @@
 language: en
 items:
+  - page: catalog.md
+    title: "Catalog tree view"
+    image: catalog_tree.png
+  - page: catalog.md
+    title: "Product actions"
+    image: product_actions.png
   - page: orders.md
     title: "Order lookup in Stack mode"
     image: orders_stack.png
   - page: orders.md
     title: "Order lookup in Kanban mode"
     image: orders_kanban.png
+  - page: stock-manager.md
+    title: "Out of stock"
+    image: stock_out_of_stock.png
+    config: stock_out_of_stock.en.annotate.yml
+  - page: stock-manager.md
+    title: "Stock overview"
+    image: stock_overview.png
+    config: stock_overview.en.annotate.yml
+  - page: stock-manager.md
+    title: "Dish actions"
+    image: stock_product_actions.png
+    config: stock_product_actions.en.annotate.yml
+  - page: stock-manager.md
+    title: "Sorting"
+    image: stock_sorting.png
+  - page: stock-manager.md
+    title: "List mode"
+    image: stock_list_view.png
   - page: users-and-groups.md
     title: "User list"
     image: platform_users.png
@@ -18,3 +42,28 @@ items:
   - page: users-and-groups.md
     title: "Permission matrix"
     image: group_permissions.png
+  - page: marketing.md
+    title: "Promo codes dashboard"
+    image: marketing_promocodes_dashboard.png
+    config: marketing_promocodes_dashboard.en.annotate.yml
+  - page: marketing.md
+    title: "Promo codes list"
+    image: marketing_promocodes_list.png
+  - page: marketing.md
+    title: "Promo code activity"
+    image: marketing_promocodes_activity.png
+  - page: marketing.md
+    title: "Promotions list"
+    image: marketing_promotions_list.png
+  - page: marketing.md
+    title: "Configured promotion form"
+    image: marketing_promotions_form.png
+    config: marketing_promotions_form.en.annotate.yml
+  - page: notification-channels.md
+    title: "Notification channels list"
+    image: notification_channels_list.png
+    config: notification_channels_list.en.annotate.yml
+  - page: setup-checklist.md
+    title: "Setup checklist overview"
+    image: setup_checklist_overview.png
+    config: setup_checklist_overview.en.annotate.yml

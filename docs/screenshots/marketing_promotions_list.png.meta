@@ -1,0 +1,3 @@
+URL: http://localhost:42880/admin/promotions-manager
+Path: Sidebar -> Marketing -> Promotions
+Description: Promotions list grouped into Configured and Programmed, with kind/status filters, discount summaries and badges.

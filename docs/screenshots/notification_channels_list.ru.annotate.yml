@@ -1,0 +1,22 @@
+input: notification_channels_list.ru.png
+width: 1680
+height: 900
+annotations:
+  - type: rect
+    x: 510
+    y: 308
+    width: 140
+    height: 128
+    label: "Статус"
+  - type: rect
+    x: 658
+    y: 308
+    width: 110
+    height: 128
+    label: "Включён"
+  - type: rect
+    x: 1038
+    y: 308
+    width: 128
+    height: 128
+    label: "Вес (приоритет)"
