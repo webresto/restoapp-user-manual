@@ -32,7 +32,12 @@ free-text label into a managed list, which gives you:
 
 ## Page layout
 
-<!-- TODO screenshot: sales_channels_overview.png -->
+<figure>
+  <div class="annotated-screenshot" data-annotation-config="screenshots/sales_channels_overview.en.annotate.yml">
+    <img src="screenshots/sales_channels_overview.png" alt="Sales Channels overview" loading="lazy">
+  </div>
+  <figcaption>Figure 1: The Sales Channels page — your channels, recommendations, and custom channel creation.</figcaption>
+</figure>
 
 The page has three areas:
 
@@ -56,7 +61,12 @@ recommended one.
 
 ### Recommended for your country
 
-<!-- TODO screenshot: sales_channels_recommended.png -->
+<figure>
+  <div class="annotated-screenshot" data-annotation-config="screenshots/sales_channels_recommended.en.annotate.yml">
+    <img src="screenshots/sales_channels_recommended.png" alt="Recommended channels" loading="lazy">
+  </div>
+  <figcaption>Figure 2: Channel types recommended for your country.</figcaption>
+</figure>
 
 RestoApp suggests channel types that fit your market (set in **Settings → `COUNTRY_ISO`**),
 for example:
@@ -76,7 +86,12 @@ regardless of country.
 
 ## Creating / editing a channel
 
-<!-- TODO screenshot: sales_channels_editor.png -->
+<figure>
+  <div class="annotated-screenshot" data-annotation-config="screenshots/sales_channels_editor.en.annotate.yml">
+    <img src="screenshots/sales_channels_editor.png" alt="Channel editor" loading="lazy">
+  </div>
+  <figcaption>Figure 3: Creating or editing a sales channel.</figcaption>
+</figure>
 
 Use **Add custom channel**, or **Add channel** on a recommended card, or **Edit** on an
 existing one. The editor fields:

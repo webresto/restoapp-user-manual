@@ -13,9 +13,9 @@
 - **Apply** — кнопка применения выбранного диапазона
 - **Кнопка обновления** (↺) — перезагрузить данные
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/orders_report.annotate.yml">
-    <img src="screenshots/orders_report.png" alt="Отчёт по заказам" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/orders_report.annotate.yml" markdown="1">
+![Отчёт по заказам](screenshots/orders_report.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 1: Сводный отчёт по заказам за июнь с разбивкой по статусам.</figcaption>
 </figure>

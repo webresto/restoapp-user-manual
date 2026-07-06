@@ -1,22 +1,22 @@
 input: sales_channels_overview.ru.png
-width: 1440
-height: 900
+width: 1600
+height: 765
 annotations:
   - type: rect
-    x: 1186
-    y: 114
-    width: 206
-    height: 40
-    label: "Создать канал"
+    x: 1338
+    y: 116
+    width: 210
+    height: 36
+    label: "Добавить свой канал"
   - type: rect
-    x: 564
+    x: 606
     y: 303
-    width: 86
+    width: 93
     height: 28
-    label: "Статус"
+    label: "Статус канала"
   - type: rect
-    x: 334
-    y: 407
-    width: 140
-    height: 30
+    x: 336
+    y: 388
+    width: 110
+    height: 26
     label: "Вкл. / выкл."

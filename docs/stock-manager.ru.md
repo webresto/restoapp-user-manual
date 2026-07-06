@@ -7,9 +7,9 @@
 ## 🚫 Стоп-лист (Нет в наличии)
 Здесь отображаются все позиции, которые в данный момент находятся в стопе. Это первоначальный список, который актуализируется напрямую из RMS (iiko).
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/stock_out_of_stock.annotate.yml">
-    <img src="screenshots/stock_out_of_stock.png" alt="Нет в наличии" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/stock_out_of_stock.annotate.yml" markdown="1">
+![Нет в наличии](screenshots/stock_out_of_stock.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 1: Список позиций в Стоп-листе.</figcaption>
 </figure>
@@ -17,9 +17,9 @@
 ## 🔍 Обзор склада
 Далее мы можем перейти во вкладку **Обзор**, где есть возможность перемещаться по папкам и категориям меню.
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/stock_overview.annotate.yml">
-    <img src="screenshots/stock_overview.png" alt="Обзор склада" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/stock_overview.annotate.yml" markdown="1">
+![Обзор склада](screenshots/stock_overview.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 2: Вкладка Обзора и навигации по папкам Менеджера склада.</figcaption>
 </figure>
@@ -32,9 +32,9 @@
 ### Управление внутри группы (Действия с блюдом)
 Зайдя внутрь группы, мы управляем карточками конкретных блюд. Здесь доступны рычаги управления состоянием позиции.
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/stock_product_actions.annotate.yml">
-    <img src="screenshots/stock_product_actions.png" alt="Действия с блюдом" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/stock_product_actions.annotate.yml" markdown="1">
+![Действия с блюдом](screenshots/stock_product_actions.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 3: Управление состоянием блюда внутри группы.</figcaption>
 </figure>

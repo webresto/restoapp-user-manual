@@ -11,9 +11,9 @@
 
 ## Список каналов
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/notification_channels_list.ru.annotate.yml">
-    <img src="screenshots/notification_channels_list.ru.png" alt="Список каналов уведомлений" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/notification_channels_list.ru.annotate.yml" markdown="1">
+![Список каналов уведомлений](screenshots/notification_channels_list.png){ loading=lazy }
   </div>
   <figcaption>Список каналов уведомлений со статусом, переключателем включения и весом по каждому каналу.</figcaption>
 </figure>

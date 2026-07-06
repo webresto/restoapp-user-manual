@@ -11,9 +11,9 @@
 - **Not configured** — сервисный ключ Firebase не загружен, отправка уведомлений невозможна
 - **Configured** — ключ загружен, канал активен
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/fcm_settings.annotate.yml">
-    <img src="screenshots/fcm_settings.png" alt="Настройки FCM Mobile push" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/fcm_settings.annotate.yml" markdown="1">
+![Настройки FCM Mobile push](screenshots/fcm_settings.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 1: Страница настройки FCM Mobile push с формой загрузки Service account JSON.</figcaption>
 </figure>

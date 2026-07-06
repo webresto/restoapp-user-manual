@@ -7,9 +7,9 @@
 
 ## Обзор
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/setup_checklist_overview.ru.annotate.yml">
-    <img src="screenshots/setup_checklist_overview.ru.png" alt="Обзор чек-листа настройки" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/setup_checklist_overview.ru.annotate.yml" markdown="1">
+![Обзор чек-листа настройки](screenshots/setup_checklist_overview.png){ loading=lazy }
   </div>
   <figcaption>Чек-лист настройки — сводка прогресса, статус по пунктам и ссылки Перейти к настройке.</figcaption>
 </figure>

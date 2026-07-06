@@ -12,9 +12,9 @@
 - **Value** — текущее значение
 - **Type** — тип значения: `string`, `boolean`, `json`
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/settings_list.annotate.yml">
-    <img src="screenshots/settings_list.png" alt="Список настроек" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/settings_list.annotate.yml" markdown="1">
+![Список настроек](screenshots/settings_list.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 1: Список системных настроек с типами значений.</figcaption>
 </figure>
@@ -33,9 +33,9 @@
 
 Нажатие на строку в таблице открывает правую панель редактирования:
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/settings_edit.annotate.yml">
-    <img src="screenshots/settings_edit.png" alt="Редактирование настройки" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/settings_edit.annotate.yml" markdown="1">
+![Редактирование настройки](screenshots/settings_edit.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 2: Панель редактирования настройки с переключателем boolean-значения.</figcaption>
 </figure>

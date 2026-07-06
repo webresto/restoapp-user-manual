@@ -1,34 +1,52 @@
 input: sales_channels_editor.ru.png
-width: 1440
-height: 1391
+width: 1264
+height: 558
 annotations:
   - type: rect
-    x: 320
-    y: 281
-    width: 250
-    height: 33
+    x: 29
+    y: 69
+    width: 291
+    height: 53
     label: "Заголовок"
   - type: rect
-    x: 583
-    y: 281
-    width: 252
-    height: 33
+    x: 334
+    y: 69
+    width: 291
+    height: 53
     label: "Ключ канала (источник заказа)"
   - type: rect
-    x: 848
-    y: 281
-    width: 162
-    height: 33
+    x: 639
+    y: 69
+    width: 291
+    height: 53
     label: "Тип"
   - type: rect
-    x: 320
-    y: 559
-    width: 534
-    height: 36
+    x: 944
+    y: 69
+    width: 291
+    height: 53
+    label: "URL / ссылка"
+  - type: rect
+    x: 29
+    y: 176
+    width: 291
+    height: 53
+    label: "Страны (ISO)"
+  - type: rect
+    x: 46
+    y: 264
+    width: 1172
+    height: 174
     label: "Привязка концепций"
   - type: rect
-    x: 320
-    y: 660
-    width: 372
-    height: 28
+    x: 71
+    y: 456
+    width: 320
+    height: 30
     label: "Включён = источник заказов"
+  - type: rect
+    x: 1085
+    y: 493
+    width: 150
+    height: 36
+    label: "Сохранить"

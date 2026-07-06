@@ -20,9 +20,9 @@
 
 ### Панель (Dashboard)
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/marketing_promocodes_dashboard.ru.annotate.yml">
-    <img src="screenshots/marketing_promocodes_dashboard.ru.png" alt="Дашборд промокодов" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/marketing_promocodes_dashboard.ru.annotate.yml" markdown="1">
+![Дашборд промокодов](screenshots/marketing_promocodes_dashboard.png){ loading=lazy }
   </div>
   <figcaption>Дашборд промокодов — карточки KPI, графики и выбор периода.</figcaption>
 </figure>
@@ -94,9 +94,9 @@ Stacks/Exclusive, Storefront, 🎁 Gift).
 
 ### Форма настраиваемой акции
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/marketing_promotions_form.ru.annotate.yml">
-    <img src="screenshots/marketing_promotions_form.ru.png" alt="Форма настраиваемой акции" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/marketing_promotions_form.ru.annotate.yml" markdown="1">
+![Форма настраиваемой акции](screenshots/marketing_promotions_form.png){ loading=lazy }
   </div>
   <figcaption>Редактор настраиваемой акции — переключатель Форма / JSON, тип скидки, Сохранить / Удалить.</figcaption>
 </figure>

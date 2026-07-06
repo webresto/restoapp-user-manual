@@ -13,9 +13,9 @@
 - **Группа** — тип получателей (`user`, `manager` и т.д.)
 - **Время создания**
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/notifications_list.annotate.yml">
-    <img src="screenshots/notifications_list.png" alt="Список уведомлений" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/notifications_list.annotate.yml" markdown="1">
+![Список уведомлений](screenshots/notifications_list.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 1: Список истории уведомлений с фильтрами.</figcaption>
 </figure>
@@ -44,9 +44,9 @@
 - **Delivery attempts** — количество попыток доставки
 - **ID** — уникальный идентификатор
 
-<figure>
-  <div class="annotated-screenshot" data-annotation-config="screenshots/notifications_detail.annotate.yml">
-    <img src="screenshots/notifications_detail.png" alt="Детали уведомления" loading="lazy">
+<figure markdown="1">
+  <div class="annotated-screenshot" data-annotation-config="../../screenshots/notifications_detail.annotate.yml" markdown="1">
+![Детали уведомления](screenshots/notifications_detail.png){ loading=lazy }
   </div>
   <figcaption>Рисунок 2: Панель деталей уведомления с кнопкой повторной отправки.</figcaption>
 </figure>
