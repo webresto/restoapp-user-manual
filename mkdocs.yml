@@ -64,8 +64,8 @@ plugins:
           site_name: RestoApp Руководство пользователя
           site_description: Руководство пользователя системы администрирования RestoApp
           nav:
-            - 'Главная': index.md
             - 'Разделы системы':
+                - 'Главная': index.md
                 - 'Каталог блюд': catalog.md
                 - 'Менеджер склада': stock-manager.md
                 - 'Управление заказами': orders.md
@@ -80,8 +80,8 @@ plugins:
                 - 'Настройки FCM': fcm-settings.md
 
 nav:
-  - 'Home': index.md
   - 'System Sections':
+      - 'Home': index.md
       - 'Product Catalog': catalog.md
       - 'Stock Manager': stock-manager.md
       - 'Order Management': orders.md
